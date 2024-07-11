@@ -14,7 +14,20 @@ $title = validate_input($_POST["title"]);
 $detail = validate_input($_POST["detail"]);
 $location = validate_input($_POST["location"]);
 $contact_no = validate_input($_POST["contact_no"]);
-$attachment = $_POST['attachment'];
+$attachment = null;
+
+// Split file name with dot (.)
+$temp_file = explode(".", $_FILES["attachment"]["name"]);
+// Get extension file
+$extension = end($temp_file);
+// Create new random filename
+$newfilename = round(microtime(true)) . '.' . $extension;
+// Path to upload
+$path = "uploads/" . $newfilename;
+// Upload file to server
+if (move_uploaded_file($_FILES["attachment"]["tmp_name"], $path)) {
+    $attachment = $path;
+}
 
 $ticket_no = 'ICT-' . time();
 

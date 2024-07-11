@@ -5,7 +5,7 @@
     <div class="card-header">
         <h3 class="card-title">Borang Aduan ICT</h3>
     </div>
-    <form action="/aduan_store.php" method="POST">
+    <form action="/aduan_store.php" method="POST" enctype="multipart/form-data">
         <div class="card-body">
             <div class="mb-3 row">
                 <label class="col-form-label col-3">Maklumat pengadu <span class="text-danger">*</span></label>
