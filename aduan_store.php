@@ -32,8 +32,8 @@ if (move_uploaded_file($_FILES["attachment"]["tmp_name"], $path)) {
 $ticket_no = 'ICT-' . time();
 
 $new_complaint = $dbCon->prepare(
-    "INSERT INTO complaints (`name`, `email`, `department_id`, `category_id`, `ticket_no`, `title`, `detail`, `location`, `contact_no`) 
-    VALUES (:name, :email, :dept, :cat, :ticket, :title, :detail, :location, :contact)"
+    "INSERT INTO complaints (`name`, `email`, `department_id`, `category_id`, `ticket_no`, `title`, `detail`, `location`, `contact_no`, `attachment`) 
+    VALUES (:name, :email, :dept, :cat, :ticket, :title, :detail, :location, :contact, :file)"
 );
 
 $new_complaint->bindparam(":name", $name);
@@ -45,7 +45,8 @@ $new_complaint->bindparam(":title", $title);
 $new_complaint->bindparam(":detail", $detail);
 $new_complaint->bindparam(":location", $location);
 $new_complaint->bindparam(":contact", $contact_no);
+$new_complaint->bindparam(":file", $attachment);
 
 $new_complaint->execute();
 
-header("Location: //{$moduleURL}/index.php");
+header("Location: /index.php");
