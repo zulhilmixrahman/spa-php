@@ -28,11 +28,6 @@
 <body>
     <script src="/dist/js/demo-theme.min.js?1692870487"></script>
     <div class="page">
-        <!-- Sidebar -->
-        <?php include (dirname(__FILE__) . '/sidebar.php') ?>
-        <!-- Navbar -->
-        <?php include (dirname(__FILE__) . '/navbar.php') ?>
-
         <div class="page-wrapper">
             <!-- Page body -->
             <div class="page-body">
