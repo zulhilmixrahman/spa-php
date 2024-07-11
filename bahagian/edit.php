@@ -1,4 +1,5 @@
 <?php
+include dirname(__FILE__) . '/../auth/validator.php';
 include dirname(__FILE__) . '/../db.php';
 $moduleURL = $_SERVER['HTTP_HOST'] . '/' . basename(__DIR__);
 $id = (int) $_GET['id'];
@@ -22,19 +23,19 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
     <form action="//<?php echo $moduleURL ?>/update.php?id=<?php echo $data['id'] ?>" method="POST">
         <div class="card-body">
             <div class="mb-3 row">
-            <div class="mb-3 row">
-                <label class="col-form-label col-2">Kod</label>
-                <div class="col-4">
-                    <input type="text" name="code" class="form-control" value="<?php echo $data['code'] ?>">
+                <div class="mb-3 row">
+                    <label class="col-form-label col-2">Kod</label>
+                    <div class="col-4">
+                        <input type="text" name="code" class="form-control" value="<?php echo $data['code'] ?>">
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3 row">
-                <label class="col-form-label col-2">Bahagian</label>
-                <div class="col-8">
-                    <input type="text" name="name" class="form-control" value="<?php echo $data['name'] ?>">
+                <div class="mb-3 row">
+                    <label class="col-form-label col-2">Bahagian</label>
+                    <div class="col-8">
+                        <input type="text" name="name" class="form-control" value="<?php echo $data['name'] ?>">
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <div class="card-footer d-flex justify-content-between">

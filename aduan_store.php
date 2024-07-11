@@ -6,14 +6,37 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-$name = validate_input($_POST["name"]);
-$email = validate_input($_POST["email"]);
-$department = (int) validate_input($_POST["department_id"]);
-$category = (int) validate_input($_POST["category_id"]);
-$title = validate_input($_POST["title"]);
-$detail = validate_input($_POST["detail"]);
-$location = validate_input($_POST["location"]);
-$contact_no = validate_input($_POST["contact_no"]);
+$errors = [];
+if (validate_input($_POST['name']) !== null) {
+    $errors['name'] = validate_input($_POST['name'], 'Nama Penuh');
+}
+if (validate_input($_POST['title']) !== null) {
+    $errors['name'] = validate_input($_POST['title'], 'Nama Penuh');
+}
+if (validate_input($_POST['email'], null, 'email') !== null) {
+    $errors['email'] = validate_input($_POST['email'], 'Alamat Emel', 'email');
+}
+if (validate_input($_POST['department_id'], null, 'int') !== null) {
+    $errors['department_id'] = validate_input($_POST['department_id'], 'Bahagian', 'int');
+}
+if (validate_input($_POST['category_id'], null, 'int') !== null) {
+    $errors['category_id'] = validate_input($_POST['category_id'], 'Kategori', 'int');
+}
+
+if (count($errors) > 0) {
+    $_SESSION['errors'] = $errors;
+    header('Location: /aduan.php');
+    exit;
+}
+
+$name = sanitize_input($_POST["name"]);
+$email = sanitize_input($_POST["email"]);
+$department = (int) sanitize_input($_POST["department_id"]);
+$category = (int) sanitize_input($_POST["category_id"]);
+$title = sanitize_input($_POST["title"]);
+$detail = sanitize_input($_POST["detail"]);
+$location = sanitize_input($_POST["location"]);
+$contact_no = sanitize_input($_POST["contact_no"]);
 $attachment = null;
 
 // Split file name with dot (.)

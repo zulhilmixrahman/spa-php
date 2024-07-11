@@ -1,3 +1,4 @@
+<?php include dirname(__FILE__) . '/auth/validator.php'; ?>
 <?php include dirname(__FILE__) . '/layouts/header.php'; ?>
 
 <div class="card">
@@ -6,6 +7,7 @@
     </div>
     <div class="card-body">
         <p>This is dashboard page</p>
+        <code><?php print_r($_SESSION) ?></code>
     </div>
 </div>
 

@@ -11,7 +11,24 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-function validate_input($data)
+
+function validate_input($input, $name = 'Medan ini', $type = 'string')
+{
+    if ($input === null || empty($input)) {
+        return $name . ' adalah wajib';
+    }
+
+    if ($type == 'int' && filter_var($input, FILTER_VALIDATE_INT) == false) {
+        return $name . ' mesti nombor bulat';
+    }
+
+    if ($type == 'email' && filter_var($input, FILTER_VALIDATE_EMAIL) == false) {
+        return $name . ' mesti alamat emel yang sah';
+    }
+
+    return null;
+}
+function sanitize_input($data)
 {
     $data = trim($data);
     $data = stripslashes($data);
