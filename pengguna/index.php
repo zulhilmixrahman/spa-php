@@ -13,7 +13,7 @@
 $stmt = $dbCon->prepare(
     "SELECT users.*, departments.name AS dept_name 
     FROM users 
-    JOIN departments ON users.department_id = departments.id"
+    LEFT JOIN departments ON users.department_id = departments.id"
 );
 $stmt->execute();
 ?>
