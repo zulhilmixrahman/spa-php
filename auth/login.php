@@ -29,13 +29,10 @@ if ($findUser->rowCount() == 0) {
 }
 
 $user = $findUser->fetch(PDO::FETCH_ASSOC);
-
-if (password_verify($password, $user['password']) == false) {
-    if ($findUser->rowCount() == 0) {
-        $_SESSION['errors']['email'] = 'Alamat Emel atau Kata Laluan tidak sah';
-        header('Location: /login.php');
-        exit;
-    }
+if (password_verify($password, $user['password']) === false) {
+    $_SESSION['errors']['email'] = 'Alamat Emel atau Kata Laluan tidak sah';
+    header('Location: /login.php');
+    exit;
 }
 
 $_SESSION['loggedin'] = true;
