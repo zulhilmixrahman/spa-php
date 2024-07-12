@@ -34,6 +34,7 @@ function validate_input($input, $name = 'Medan ini', $type = 'string')
 
     return null;
 }
+
 /**
  * Sanitize input data
  * @param mixed $data Value to sanitize

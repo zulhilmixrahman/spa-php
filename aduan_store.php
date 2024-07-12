@@ -12,7 +12,7 @@ if (validate_input($_POST['name']) !== null) {
     $errors['name'] = validate_input($_POST['name'], 'Nama Penuh');
 }
 if (validate_input($_POST['title']) !== null) {
-    $errors['name'] = validate_input($_POST['title'], 'Nama Penuh');
+    $errors['title'] = validate_input($_POST['title'], 'Nama Penuh');
 }
 if (validate_input($_POST['email'], null, 'email') !== null) {
     $errors['email'] = validate_input($_POST['email'], 'Alamat Emel', 'email');
