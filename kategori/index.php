@@ -1,3 +1,4 @@
+<?php include dirname(__FILE__) . '/../auth/validator.php'; ?>
 <?php include dirname(__FILE__) . '/../layouts/header.php'; ?>
 <?php include dirname(__FILE__) . '/../db.php'; ?>
 <?php $moduleURL = $_SERVER['HTTP_HOST'] . '/' . basename(__DIR__); ?>

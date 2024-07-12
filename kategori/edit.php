@@ -3,6 +3,7 @@
 <?php $moduleURL = $_SERVER['HTTP_HOST'] . '/' . basename(__DIR__); ?>
 
 <?php
+include dirname(__FILE__) . '/../auth/validator.php';
 $id = (int) $_GET['id'];
 
 $stmt = $dbCon->prepare("SELECT * FROM categories WHERE id = :id");

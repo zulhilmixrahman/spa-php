@@ -73,4 +73,4 @@ $new_complaint->bindparam(":file", $attachment);
 
 $new_complaint->execute();
 
-header("Location: /index.php");
+header("Location: /aduan_view.php?t=" . $ticket_no);
