@@ -1,4 +1,4 @@
-<?php unset($_SESSION['errors']) ?>
+<?php unset($_SESSION['errors']); ?>
 </div>
 <!-- Libs JS -->
 <script src="/dist/libs/apexcharts/dist/apexcharts.min.js?1692870487" defer></script>

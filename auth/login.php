@@ -6,7 +6,6 @@ $errors = [];
 if (validate_input($_POST['email'], null, 'email') !== null) {
     $errors['email'] = validate_input($_POST['email'], 'Alamat Emel', 'email');
 }
-
 if (validate_input($_POST['password']) !== null) {
     $errors['password'] = validate_input($_POST['password'], 'Kata Laluan');
 }
@@ -21,7 +20,6 @@ $email = sanitize_input($_POST["email"]);
 $password = sanitize_input($_POST["password"]);
 
 $findUser = $dbCon->prepare("SELECT * FROM users WHERE email = :email");
-$findUser->bindParam(':id', $id);
 $findUser->execute([':email' => $email]);
 
 if ($findUser->rowCount() == 0) {

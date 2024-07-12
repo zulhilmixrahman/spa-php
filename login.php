@@ -6,8 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h2 class="h2 text-center mb-4">Log Masuk</h2>
-                <form action="//<?php echo $_SERVER['HTTP_HOST'] ?>/auth/login.php" method="POST" autocomplete="off"
-                    novalidate>
+                <form action="//<?php echo $_SERVER['HTTP_HOST'] ?>/auth/login.php" method="POST">
                     <div class="mb-3">
                         <label class="form-label">Alamat Emel</label>
                         <input type="email" name="email"
