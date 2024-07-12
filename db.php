@@ -11,7 +11,13 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-
+/**
+ * Validate input data
+ * @param mixed $input Value to validate
+ * @param mixed $name Attribute name
+ * @param mixed $type Type of value to validate
+ * @return string|null
+ */
 function validate_input($input, $name = 'Medan ini', $type = 'string')
 {
     if ($input === null || empty($input)) {
@@ -28,6 +34,11 @@ function validate_input($input, $name = 'Medan ini', $type = 'string')
 
     return null;
 }
+/**
+ * Sanitize input data
+ * @param mixed $data Value to sanitize
+ * @return string
+ */
 function sanitize_input($data)
 {
     $data = trim($data);

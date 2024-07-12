@@ -1,4 +1,5 @@
 <?php
+session_start();
 include dirname(__FILE__) . '/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {

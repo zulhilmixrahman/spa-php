@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include dirname(__FILE__) . '/layouts/public_header.php'; ?>
 <?php include dirname(__FILE__) . '/db.php'; ?>
 
